@@ -27,4 +27,9 @@ sed -i 's/|/_/g' WO.fa
 sed -i 's/\*//g' WO.fa
 sed -i 's/\*//g' JN.fa
 ```
+####download chinese chestnut peptides
+```
+wget http://www.hardwoodgenomics.org/sites/default/files/chestnut_genome_v1_1/Cm_v1.1_peptides.fasta
+mv Cm_v1.1_peptides.fasta CM.fa
+```
 ---
