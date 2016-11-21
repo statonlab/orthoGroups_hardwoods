@@ -1,7 +1,7 @@
 This directory will be used to store the run files for the orthoMCL run.
 ####copy template file here
 ```
-#cp /lustre/projects/staton/software/orthomclSoftware-v2.0.9/doc/OrthoMCLEngine/Main/orthomcl.config.template ./
+cp /lustre/projects/staton/software/orthomclSoftware-v2.0.9/doc/OrthoMCLEngine/Main/orthomcl.config.template ./
 ```
 ####change it's name
 ```
@@ -9,14 +9,13 @@ mv orthomcl.config.template 03_orthomcl.cfg
 ```
 ####edit contents
 ```
-#dbConnectString=dbi:mysql:db=orthomcl:host=127.0.0.1:3306
-#dbLogin=orthomcl
-#dbPassword=c0ff33
+echo "dbConnectString=dbi:mysql:db=orthomcl:host=127.0.0.1:3306
+dbLogin=orthomcl
+dbPassword=c0ff33"
 ```
 ---
-#export MYSQL_HOME=/lustre/projects/staton/software/mysql-5.6.23
-#/lustre/projects/staton/software/mysql-5.6.23/bin/mysqld_safe --defaults-file=/lustre/projects/staton/software/mysql-5.6.23/my.cnf &
-#/lustre/projects/staton/software/mysql-5.6.23/support-files/mysql.server start
+####just an echo command to remind what needs to be run
+```
 echo "The following needs to be done:
 export MYSQL_HOME=/lustre/projects/staton/software/mysql-5.6.23
 cd /lustre/projects/staton/software/mysql-5.6.23
