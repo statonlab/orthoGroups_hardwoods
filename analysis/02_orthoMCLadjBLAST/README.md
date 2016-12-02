@@ -100,12 +100,11 @@ blastp \
 ---
 ####running into an error when trying to load 08_blast.parsed.tsv. Going to try and shorten table. 
 ```
+??
 ```
 ####I ran the following command to generate this script:
 ```
-```
-####head -n1 04_compliantFasta/*.fasta | grep "^>" | sed 's/^>//g' | sed 's/|/\t/g' | cut -d '_' -f 1-3 | sed 's/Fagus_grandifolia_081508/Fagus_grandifolia_081508_ABall/g' | awk '{print $2,$1}' | sed 's/ /\//g' | sed "s/^/sed -i 's\//g" | sed "s/$/\/g' 08_blast.tmp.parsed.tsv/g"
-```
+head -n1 04_compliantFasta/*.fasta | grep "^>" | sed 's/^>//g' | sed 's/|/\t/g' | cut -d '_' -f 1-3 | sed 's/Fagus_grandifolia_081508/Fagus_grandifolia_081508_ABall/g' | awk '{print $2,$1}' | sed 's/ /\//g' | sed "s/^/sed -i 's\//g" | sed "s/$/\/g' 08_blast.tmp.parsed.tsv/g"
 cp 08_blast.parsed.tsv 08_blast.tmp.parsed.tsv
 ```
 ####however, I also had to manually create extra lines for CAME
@@ -135,21 +134,13 @@ sed -i 's/snap/s/g' 08_blast.tmp.parsed.tsv
 ####load results into orhomcl mysql database
 ```
 /lustre/projects/staton/software/orthomclSoftware-v2.0.9/bin/orthomclLoadBlast 03_orthomcl.cfg 09_blast.parsed.tsv
-```
----
 /lustre/projects/staton/software/orthomclSoftware-v2.0.9/bin/orthomclPairs 03_orthomcl.cfg 11_log.txt cleanup=yes
-```
----
 /lustre/projects/staton/software/orthomclSoftware-v2.0.9/bin/orthomclDumpPairsFiles 03_orthomcl.cfg
 echo "When this is finished running stop the server:
 export MYSQL_HOME=/lustre/projects/staton/software/mysql-5.6.23
 cd /lustre/projects/staton/software/mysql-5.6.23
 /lustre/projects/staton/software/mysql-5.6.23/support-files/mysql.server stop"
-```
----
 /lustre/projects/staton/software/mcl_14.137/bin/mcl ./mclInput --abc -I 1.5 -o ./mclOutput
-```
----
 /lustre/projects/staton/software/orthomclSoftware-v2.0.9/bin/orthomclMclToGroups OG 1000 < mclOutput > 14_groups.txt
 ```
 ---
@@ -181,8 +172,7 @@ sed -i 's/|LITU/|Liriodendron_tulipifera_10132014/g' 15_groups.txt
 sed -i 's/|NYSY/|Nyssa_sylvatica_10132014/g' 15_groups.txt
 sed -i 's/|QUAL/|WO454_contig10004_v2/g' 15_groups.txt
 sed -i 's/|QURU/|Quercus_rubra_120313/g' 15_groups.txt
-```
----
+
 echo "running:"
 qstat | grep "r" | wc -l
 echo "queue'd:"
