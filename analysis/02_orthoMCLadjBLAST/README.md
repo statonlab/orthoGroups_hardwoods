@@ -4,6 +4,7 @@ This will be an attempt at adjusting BLAST paramters to try and make more reason
 cp ../01_orthoMCL/03_orthomcl.cfg ./03_orthomcl.cfg
 ```
 ---
+```
 #export MYSQL_HOME=/lustre/projects/staton/software/mysql-5.6.23
 #/lustre/projects/staton/software/mysql-5.6.23/bin/mysqld_safe --defaults-file=/lustre/projects/staton/software/mysql-5.6.23/my.cnf &
 #/lustre/projects/staton/software/mysql-5.6.23/support-files/mysql.server start
